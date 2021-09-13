@@ -30,7 +30,12 @@ export class DeseosService {
 
   obtenerLista(id:string | number): any{
     id = Number(id);
-    this.listas.find( listaData =>listaData.id === id)
+    for (let i = 0; i < this.listas.length; i++) {
+      if (this.listas[i].id === id)
+      {
+         return this.listas[i];
+      }
+    }
   }
 
   guardarStorage(){
